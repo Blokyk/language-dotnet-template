@@ -19,7 +19,13 @@ class Program
 
         var parser = new Parser(tokenizer);
 
-        /* var expr = "a = 5 + 6 * (max (lo, fi + 6) ^ 2)";
+        /*File.WriteAllText(Directory.GetCurrentDirectory() + "/generated.txt", "");
+
+        while (parser.Consume(out StatementNode node)) {
+            File.AppendAllText(Directory.GetCurrentDirectory() + "/generated.txt", node.ToText(true));
+        }
+
+        var expr = "a = 5 + 6 * (max (lo, fi + 6) ^ 2)";
         Console.WriteLine(expr);
         Console.WriteLine(String.Join(" ", Parser.ToPostfixNotation(new Tokenizer(expr)).ConvertAll(t => {
             if (t == "++" || t == "--") {
@@ -50,8 +56,7 @@ class Program
 
         var interpreter = new Interpreter(parser);
 
-        interpreter.RunAll();
-
+        //interpreter.RunAll();
     }
 
     public static GraphNode ToGraphNode(ValueNode node) {

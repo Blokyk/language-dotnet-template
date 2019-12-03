@@ -24,7 +24,7 @@ public class InvalidOperationException : System.Exception
     public InvalidOperationException(string message, Token token)
         : base($"{token.Location} : Incompatible operation. {message}") { }
     public InvalidOperationException(OperationNode op, StatementNode operand)
-        : base($"{op.Token.Location} : Cannot apply operator '{op.Representation} to operand of type '{operand.GetFriendlyName()}'.") { }
+        : base($"{op.Token.Location} : Cannot apply operator '{op.Representation}' to operand of type '{operand.GetFriendlyName()}'.") { }
     public InvalidOperationException(OperationNode op, StatementNode operand, params string[] expected)
         : base($"{op.Token.Location} : Cannot apply operator '{op.Representation} to operand of type '{operand.GetFriendlyName()}'."
         + $"'{op.Representation}' can only be applied to operand of type '{String.Join("', or '", new List<string>(expected))}'") { }

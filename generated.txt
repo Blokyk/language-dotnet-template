@@ -1,0 +1,4 @@
+var greeting = ("Hi")var name = ("Mark")print(((((((greeting) + (" "))) + (name))) + ("!")))(greeting) = ("Hello")(name) = ("world")print(((((greeting) + (" "))) + (name)))def printError(msg, tk) {
+	var location = (tk)
+	print($"({location}) : {msg}")
+}printError("a message", "line 1")

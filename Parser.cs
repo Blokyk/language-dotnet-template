@@ -302,14 +302,7 @@ public class Parser : IConsumer<StatementNode>
             left = Constants.GetOperatorParselet(token).Parse(this, token, left);
         }
 
-        if (tokenizer.Peek() == ",") {
-
-            // consume the remaining ","
-            tokenizer.Consume();
-
-            // then returns the left operand (i.e. the value);
-            return left as ValueNode;
-        }
+        if (tokenizer.Peek() != null && tokenizer.Peek() == ",") tokenizer.Consume();
 
         return left as ValueNode;
     }
